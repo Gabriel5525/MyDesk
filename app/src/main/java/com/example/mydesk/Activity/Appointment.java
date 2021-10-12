@@ -9,10 +9,13 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -20,6 +23,7 @@ import android.widget.Toast;
 import com.example.mydesk.MainActivity;
 import com.example.mydesk.R;
 import com.example.mydesk.model.AgendamentoModel;
+import com.example.mydesk.model.GRadioGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,17 +35,56 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.List;
 
 public class Appointment extends AppCompatActivity {
 
     private Button buttonDatePicker;
     private Button  btn_agendar;
-    private RadioGroup rg_grupo;
+    private RadioGroup radioGroup;
     private Spinner spinner_horario;
     private DatePickerDialog datePickerDialog;
     private ArrayList<String> list ;
     private ArrayAdapter<String> adapter ;
+    private RadioButton radioButton;
+    private RadioButton radioButton2;
+    private RadioButton radioButton3;
+    private RadioButton radioButton4;
+    private RadioButton radioButton5;
+    private RadioButton radioButton6;
+    private RadioButton radioButton7;
+    private RadioButton radioButton8;
+    private RadioButton radioButton9;
+    private RadioButton radioButton10;
+    private RadioButton radioButton11;
+    private RadioButton radioButton12;
+    private RadioButton radioButton13;
+    private RadioButton radioButton14;
+    private RadioButton radioButton15;
+    private RadioButton radioButton16;
+    private RadioButton radioButton17;
+    private RadioButton radioButton18;
+    private RadioButton radioButton19;
+    private RadioButton radioButton20;
+    private RadioButton radioButton21;
+    private RadioButton radioButton22;
+    private RadioButton radioButton23;
+    private RadioButton radioButton24;
+    private RadioButton radioButton25;
+    private RadioButton radioButton26;
+    private RadioButton radioButton27;
+    private RadioButton radioButton28;
+    private RadioButton radioButton29;
+    private RadioButton radioButton30;
+    private RadioButton radioButton31;
+    private RadioButton radioButton32;
+    private RadioButton radioButton33;
+    private RadioButton radioButton34;
+    private RadioButton radioButton35;
+    private RadioButton radioButton36;
 
+    private CompoundButton previousCheckedCompoundButton;
+    private List<RadioButton> radios;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -53,6 +96,7 @@ public class Appointment extends AppCompatActivity {
         initDatePicker();
 
         list = new ArrayList<>();
+        radios = new ArrayList<RadioButton>();
         adapter = new ArrayAdapter<String>(this, R.layout.list_horarios, list);
         initHorarios();
         verificaDisponibilidade();
@@ -62,6 +106,10 @@ public class Appointment extends AppCompatActivity {
         spinner_horario = findViewById(R.id.spinner_horario);
         spinner_horario.setAdapter(adapter);
 
+        setViewbyID();
+        setRadioButtons();
+        addListRadios();
+
         btn_agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,26 +118,131 @@ public class Appointment extends AppCompatActivity {
 
                 agendamento.setId_cliente(currentUser.getUid());
                 agendamento.setData(buttonDatePicker.getText().toString());
-                agendamento.setHorario(spinner_horario.getSelectedItem().toString());
+                agendamento.setHorario(getRadioButtonSelected().getText().toString());
 
                 agendamento.salvar();
-                Toast.makeText(Appointment.this, "Agendamento efetuado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Appointment.this, "Reserva efetuada com sucesso!", Toast.LENGTH_SHORT).show();
                 abrirTelaPrincipal();
             }
         });
     }
 
+    private void addListRadios() {
+        radios.add(radioButton);
+        radios.add(radioButton2);
+        radios.add(radioButton3);
+        radios.add(radioButton4);
+        radios.add(radioButton5);
+        radios.add(radioButton6);
+        radios.add(radioButton7);
+        radios.add(radioButton8);
+        radios.add(radioButton9);
+        radios.add(radioButton10);
+        radios.add(radioButton11);
+        radios.add(radioButton12);
+        radios.add(radioButton13);
+        radios.add(radioButton14);
+        radios.add(radioButton15);
+        radios.add(radioButton16);
+        radios.add(radioButton17);
+        radios.add(radioButton18);
+        radios.add(radioButton19);
+        radios.add(radioButton20);
+        radios.add(radioButton21);
+        radios.add(radioButton22);
+        radios.add(radioButton23);
+        radios.add(radioButton24);
+        radios.add(radioButton25);
+        radios.add(radioButton26);
+        radios.add(radioButton27);
+        radios.add(radioButton28);
+        radios.add(radioButton29);
+        radios.add(radioButton30);
+        radios.add(radioButton31);
+        radios.add(radioButton32);
+        radios.add(radioButton33);
+        radios.add(radioButton34);
+        radios.add(radioButton35);
+        radios.add(radioButton36);
+
+    }
+
+    private void setViewbyID() {
+        radioButton  =  findViewById(R.id.radioButton);
+        radioButton2 = findViewById(R.id.radioButton2);
+        radioButton3 = findViewById(R.id.radioButton3);
+        radioButton4 = findViewById(R.id.radioButton4);
+        radioButton5 = findViewById(R.id.radioButton5);
+        radioButton6 = findViewById(R.id.radioButton6);
+        radioButton7 = findViewById(R.id.radioButton7);
+        radioButton8 = findViewById(R.id.radioButton8);
+        radioButton9 = findViewById(R.id.radioButton9);
+        radioButton10 = findViewById(R.id.radioButton10);
+        radioButton11 = findViewById(R.id.radioButton11);
+        radioButton12 = findViewById(R.id.radioButton12);
+        radioButton13 =  findViewById(R.id.radioButton13);
+        radioButton14 = findViewById(R.id.radioButton14);
+        radioButton15 = findViewById(R.id.radioButton15);
+        radioButton16 = findViewById(R.id.radioButton16);
+        radioButton17 =findViewById(R.id.radioButton17);
+        radioButton18 = findViewById(R.id.radioButton18);
+        radioButton19 = findViewById(R.id.radioButton19);
+        radioButton20 = findViewById(R.id.radioButton20);
+        radioButton21 = findViewById(R.id.radioButton21);
+        radioButton22 = findViewById(R.id.radioButton22);
+        radioButton23 = findViewById(R.id.radioButton23);
+        radioButton24 = findViewById(R.id.radioButton24);
+        radioButton25 = findViewById(R.id.radioButton25);
+        radioButton26 = findViewById(R.id.radioButton26);
+        radioButton27 = findViewById(R.id.radioButton27);
+        radioButton28 = findViewById(R.id.radioButton28);
+        radioButton29 = findViewById(R.id.radioButton29);
+        radioButton30 = findViewById(R.id.radioButton30);
+        radioButton31 = findViewById(R.id.radioButton31);
+        radioButton32 = findViewById(R.id.radioButton32);
+        radioButton33 = findViewById(R.id.radioButton33);
+        radioButton34 = findViewById(R.id.radioButton34);
+        radioButton35 = findViewById(R.id.radioButton35);
+        radioButton36 = findViewById(R.id.radioButton36);
+    }
+
     private void initHorarios() {
-        list.add("09:00");
-        list.add("10:00");
-        list.add("11:00");
-        list.add("12:00");
-        list.add("13:00");
-        list.add("14:00");
-        list.add("15:00");
-        list.add("16:00");
-        list.add("17:00");
-        list.add("18:00");
+        list.add("A1");
+        list.add("A2");
+        list.add("A3");
+        list.add("A4");
+        list.add("A5");
+        list.add("A6");
+        list.add("A7");
+        list.add("A8");
+        list.add("A9");
+        list.add("B1");
+        list.add("B2");
+        list.add("B3");
+        list.add("B4");
+        list.add("B5");
+        list.add("B6");
+        list.add("B7");
+        list.add("B8");
+        list.add("B9");
+        list.add("C1");
+        list.add("C2");
+        list.add("C3");
+        list.add("C4");
+        list.add("C5");
+        list.add("C6");
+        list.add("C7");
+        list.add("C8");
+        list.add("C9");
+        list.add("D1");
+        list.add("D2");
+        list.add("D3");
+        list.add("D4");
+        list.add("D5");
+        list.add("D6");
+        list.add("D7");
+        list.add("D8");
+        list.add("D9");
     }
 
     private void abrirTelaPrincipal() {
@@ -148,6 +301,8 @@ public class Appointment extends AppCompatActivity {
                 }
                 Collections.sort(list);
                 adapter.notifyDataSetChanged();
+                enableRadioButtons();
+
             }
 
             @Override
@@ -161,6 +316,30 @@ public class Appointment extends AppCompatActivity {
         return dayOfMonth + " " + getMonthFormat(month) + " " + year;
     }
 
+    public RadioButton getRadioButtonSelected(){
+
+        RadioButton radio;
+        for(int i=0;i<radios.size();i++){
+            if(radios.get(i).isChecked()){
+                return radios.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void enableRadioButtons(){
+        for(int i=0;i<radios.size();i++){
+            radios.get(i).setEnabled(false);
+            for(int j=0;j<list.size();j++){
+                if(radios.get(i).getText().equals(list.get(j))){
+                    radios.get(i).setEnabled(true);
+                    if(j==0){
+                        radios.get(i).setChecked(true);
+                    }
+                }
+            }
+        }
+    }
     private String getMonthFormat(int month) {
         switch (month){
             case 1:
@@ -187,10 +366,64 @@ public class Appointment extends AppCompatActivity {
                 return "NOV";
             case 12:
                 return "DEZ";
-
             default:
                 return "JAN";
         }
+    }
+
+    public void setRadioButtons(){
+
+        CompoundButton.OnCheckedChangeListener onRadioButtonCheckedListener = new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (!isChecked) return;
+                if (previousCheckedCompoundButton != null) {
+                    previousCheckedCompoundButton.setChecked(false);
+                    previousCheckedCompoundButton = buttonView;
+                } else {
+                    previousCheckedCompoundButton = buttonView;
+                }
+            }
+        };
+
+        radioButton.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton2.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton3.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton4.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton3.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton4.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton5.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton6.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton7.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton8.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton9.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton10.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton11.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton12.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton13.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton14.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton15.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton16.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton17.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton18.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton19.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton20.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton21.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton22.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton23.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton24.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton25.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton26.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton27.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton28.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton29.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton30.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton31.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton32.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton33.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton34.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton35.setOnCheckedChangeListener(onRadioButtonCheckedListener);
+        radioButton36.setOnCheckedChangeListener(onRadioButtonCheckedListener);
     }
 
     public void openDataPicker(View view) {

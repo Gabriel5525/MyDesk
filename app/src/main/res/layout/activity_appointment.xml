@@ -151,7 +151,7 @@
                                 android:layout_below="@+id/textView"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/gotham"
-                                android:text="Escolha uma hora"
+                                android:text="Escolha seu lugar"
                                 android:textAlignment="center"
                                 android:textColor="#000000"
                                 android:textSize="18sp" />
@@ -162,6 +162,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:padding="10dp"
+                                android:visibility="invisible"
                                 android:background="@color/white"
                                 android:fontFamily="@font/gotham"
                                 android:layout_marginBottom="10dp"
@@ -175,6 +176,797 @@
 
 
                 </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="-36dp"
+                    android:layout_marginRight="8dp"
+                    app:cardCornerRadius="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="8dp">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioGroup"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:orientation="horizontal"
+                                android:weightSum="100">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="33.3"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:src="@drawable/booked_img" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/calibri"
+                                        android:text="Booked"
+                                        android:textAlignment="center"
+                                        android:textColor="#b2b2b2" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="33.3"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:src="@drawable/available_img" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/calibri"
+                                        android:text="Available"
+                                        android:textAlignment="center"
+                                        android:textColor="#b2b2b2" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="33.3"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:src="@drawable/your_seat_img" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/calibri"
+                                        android:text="Your Seat"
+                                        android:textAlignment="center"
+                                        android:textColor="#b2b2b2" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="1"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:visibility="invisible" />
+
+                                    <TextView
+                                        android:layout_width="36dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="A"
+                                        android:textAlignment="center"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="36dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="B"
+                                        android:textAlignment="center"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="36dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="C"
+                                        android:textAlignment="center"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="36dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="D"
+                                        android:textAlignment="center"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="1"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A1"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B1"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton2"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C1"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton3"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D1"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton4"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center"
+                                    tools:ignore="NestedWeights">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="2"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A2"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton5"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B2"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton6"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C2"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton7"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D2"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton8"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="3"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A3"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton9"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B3"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton10"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C3"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton11"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D3"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton12"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="4"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A4"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton13"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B4"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton14"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C4"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton15"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D4"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton16"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="5"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A5"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton17"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B5"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton18"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C5"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton19"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D5"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton20"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="6"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A6"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton21"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B6"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton22"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C6"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton23"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D6"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton24"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="7"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A7"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton25"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B7"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton26"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C7"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton27"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D7"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton28"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="8"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A8"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton29"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B8"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton30"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C8"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton31"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D8"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton32"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="100"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="16dp"
+                                        android:fontFamily="@font/print_clearly"
+                                        android:text="9"
+                                        android:textColor="#c3c3c3"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="A9"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton33"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="B9"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton34"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:gravity="center">
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="C9"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton35"/>
+
+                                    <RadioButton
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:text="D9"
+                                        android:textSize="0dp"
+                                        android:id="@+id/radioButton36"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </RadioGroup>
+
+                </androidx.cardview.widget.CardView>
+
 
                 <Button
                     android:id="@+id/btn_agendar"
