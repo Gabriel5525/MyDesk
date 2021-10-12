@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:background="@drawable/tela_login"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Minhas Reservas"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35sp" />
+
+    <ListView
+        android:id="@+id/lst_agendamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:longClickable="true"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/add"
+        style="@style/loginButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lst_agendamentos"
+        android:layout_centerInParent="true"
+        android:text="Fazer Novo Agendamento"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
