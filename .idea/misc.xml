@@ -3,15 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable-v24/buttonshape.xml" value="0.12083333333333333" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable-v24/ic_date_range_light_blue_24dp.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1953125" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable-v24/ic_location_on_light_blue_24dp.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable-xxxhdpi/backgroud_register.xml" value="0.1953125" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/backgroud.xml" value="0.1953125" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/bg_calendar.xml" value="0.1953125" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.12083333333333333" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/ic_baseline_emoji_people_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1953125" />
-        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_appointment.xml" value="0.11005434782608696" />
-        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_login.xml" value="0.11005434782608696" />
-        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_main.xml" value="0.125" />
-        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_register.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_appointment.xml" value="0.22" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/activity_register.xml" value="0.21" />
         <entry key="..\:/Users/gabriel.miranda/StudioProjects/MyDesk/app/src/main/res/layout/list_agendamentos.xml" value="0.11005434782608696" />
       </map>
     </option>
