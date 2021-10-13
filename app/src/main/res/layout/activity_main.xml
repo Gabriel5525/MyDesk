@@ -130,7 +130,8 @@
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:background="@color/white"
-                                android:gravity="center"
+                                android:gravity="center_horizontal"
+
                                 android:longClickable="true"
                                 android:padding="10dp"
                                 android:textAlignment="center"

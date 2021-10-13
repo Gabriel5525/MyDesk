@@ -9,7 +9,6 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,7 +22,6 @@ import android.widget.Toast;
 import com.example.mydesk.MainActivity;
 import com.example.mydesk.R;
 import com.example.mydesk.model.AgendamentoModel;
-import com.example.mydesk.model.GRadioGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -283,6 +281,7 @@ public class Appointment extends AppCompatActivity {
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, ano, mes, dia);
         datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+//        datePickerDialog.getDatePicker().setMaxDate((System.currentTimeMillis() - 1000)+(1000*60*60*24*90));
     }
 
     private void verificaDisponibilidade() {
@@ -315,7 +314,6 @@ public class Appointment extends AppCompatActivity {
     private String makeDateString(int dayOfMonth, int month, int year) {
         return dayOfMonth + " " + getMonthFormat(month) + " " + year;
     }
-
     public RadioButton getRadioButtonSelected(){
 
         RadioButton radio;
@@ -340,6 +338,7 @@ public class Appointment extends AppCompatActivity {
             }
         }
     }
+
     private String getMonthFormat(int month) {
         switch (month){
             case 1:
@@ -428,5 +427,13 @@ public class Appointment extends AppCompatActivity {
 
     public void openDataPicker(View view) {
         datePickerDialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Appointment.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

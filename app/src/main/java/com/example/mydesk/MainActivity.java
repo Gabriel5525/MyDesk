@@ -1,17 +1,21 @@
 package com.example.mydesk;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.mydesk.Activity.Appointment;
 import com.example.mydesk.Activity.Login;
+import com.example.mydesk.model.AgendamentoModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -70,6 +74,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        lst_agendamentos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+                final int which_item = position;
+
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Remover reserva")
+                        .setMessage("Deseja remover esta reserva?")
+                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                AgendamentoModel agendamento = new AgendamentoModel();
+                                String reserva = list.get(which_item);
+                                String[] items = reserva.split(": ");
+                                if(items.length>=2){
+                                    agendamento.removerReserva(items[1]);
+                                    list.remove(which_item);
+                                    adapter.notifyDataSetChanged();
+                                }
+                            }
+                        })
+                        .setNegativeButton("No",null)
+                        .show();
+                return true;
+            }
+        });
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,26 +113,10 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(lst_agendamentos);
     }
 
-/*    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        if (v.getId() == R.id.lst_agendamentos){
-            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-            String [] menuItems = items;
-            for (int i=0;i<menuItems.length;i++){
-                menu.add(Menu.NONE,i,i,menuItems[i]);
-            }
-        }
-    }
-
     @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int menuItemIndex = item.getItemId();
-        String [] menuItems = items;
-        String menuItemName = menuItems[menuItemIndex];
-    }*/
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     @Override
     protected void onStart() {
