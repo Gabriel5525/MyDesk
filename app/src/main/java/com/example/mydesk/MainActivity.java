@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         })
-                        .setNegativeButton("No",null)
+                        .setNegativeButton("Não",null)
                         .show();
                 return true;
             }
@@ -111,6 +111,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         registerForContextMenu(lst_agendamentos);
+    }
+
+    public void logout(View view){
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Sair")
+                .setMessage("Deseja sair?")
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(MainActivity.this, Login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("Não",null)
+                .show();
     }
 
     @Override

@@ -281,7 +281,7 @@ public class Appointment extends AppCompatActivity {
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, ano, mes, dia);
         datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-//        datePickerDialog.getDatePicker().setMaxDate((System.currentTimeMillis() - 1000)+(1000*60*60*24*90));
+//        datePickerDialog.getDatePicker().setMaxDate((System.currentTimeMillis() - 1000)+(1000*60*60*24*7));
     }
 
     private void verificaDisponibilidade() {
@@ -342,31 +342,31 @@ public class Appointment extends AppCompatActivity {
     private String getMonthFormat(int month) {
         switch (month){
             case 1:
-                return "JAN";
+                return "de janeiro de ";
             case 2:
-                return "FEV";
+                return "de fevereiro de";
             case 3:
-                return "MAR";
+                return "de março de ";
             case 4:
-                return "ABR";
+                return "de abril de ";
             case 5:
-                return "MAI";
+                return "de maio de";
             case 6:
-                return "JUN";
+                return "de junho de";
             case 7:
-                return "JUL";
+                return "de julho de";
             case 8:
-                return "AGO";
+                return "de agosto de";
             case 9:
-                return "SET";
+                return "de setembro de";
             case 10:
-                return "OUT";
+                return "de outubro de";
             case 11:
-                return "NOV";
+                return "de novembro de";
             case 12:
-                return "DEZ";
+                return "de dezembro de";
             default:
-                return "JAN";
+                return "de janeiro de";
         }
     }
 
